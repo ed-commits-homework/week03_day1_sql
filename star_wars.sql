@@ -17,3 +17,12 @@ INSERT INTO characters (name, darkside, age) VALUES ('yoda', false, 999);
 UPDATE characters SET age = 65 WHERE name = 'obi-wan';
 
 SELECT * FROM characters;
+
+CREATE TABLE lightsabers (
+    id SERIAL PRIMARY KEY,
+    color VARCHAR(255) NOT NULL,
+    character_id INT REFERENCES characters(id)
+);
+
+INSERT INTO lightsabers (color) VALUES ('green');
+INSERT INTO lightsabers (color) VALUES ('red');
