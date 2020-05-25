@@ -1,8 +1,8 @@
 DROP TABLE characters;
 
 CREATE TABLE characters (
-    id SERIAL,
-    name VARCHAR(255),
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
     darkside BOOLEAN,
     age INT
 );
@@ -14,6 +14,6 @@ UPDATE characters SET (name, darkside) = ('darth vader', true) WHERE name = 'ana
 
 INSERT INTO characters (name, darkside, age) VALUES ('yoda', false, 999);
 
-UPDATE characters SET (age) = 65 WHERE name = 'obi-wan';
+UPDATE characters SET age = 65 WHERE name = 'obi-wan';
 
 SELECT * FROM characters;
